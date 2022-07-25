@@ -3,45 +3,45 @@ import 'dart:convert';
 import '../../domain/entities/computer_entity.dart';
 
 class ComputerDto extends ComputerEntity {
-  String model;
-  String brand;
-  double price;
-  int quantity;
-  bool isNew;
+  String modelDTO;
+  String brandDTO;
+  double priceDTO;
+  int quantityDTO;
+  bool isNewDTO;
 
   ComputerDto({
-    required this.model,
-    required this.brand,
-    required this.price,
-    required this.quantity,
-    required this.isNew,
+    required this.modelDTO,
+    required this.brandDTO,
+    required this.priceDTO,
+    required this.quantityDTO,
+    required this.isNewDTO,
   }) : super(
-          brand: brand,
-          model: model,
-          price: price,
-          quantity: quantity,
-          isNew: isNew,
+          brand: brandDTO,
+          model: modelDTO,
+          price: priceDTO,
+          quantity: quantityDTO,
+          isNew: isNewDTO,
         );
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
 
-    result.addAll({'model': model});
-    result.addAll({'brand': brand});
-    result.addAll({'price': price});
-    result.addAll({'quantity': quantity});
-    result.addAll({'isNew': isNew});
+    result.addAll({'modelDTO': modelDTO});
+    result.addAll({'brandDTO': brandDTO});
+    result.addAll({'priceDTO': priceDTO});
+    result.addAll({'quantityDTO': quantityDTO});
+    result.addAll({'isNewDTO': isNewDTO});
 
     return result;
   }
 
   factory ComputerDto.fromMap(Map<String, dynamic> map) {
     return ComputerDto(
-      model: map['model'] ?? '',
-      brand: map['brand'] ?? '',
-      price: map['price']?.toDouble() ?? 0.0,
-      quantity: map['quantity']?.toInt() ?? 0,
-      isNew: map['isNew'] ?? false,
+      modelDTO: map['modelDTO'] ?? '',
+      brandDTO: map['brandDTO'] ?? '',
+      priceDTO: map['priceDTO']?.toDouble() ?? 0.0,
+      quantityDTO: map['quantityDTO']?.toInt() ?? 0,
+      isNewDTO: map['isNewDTO'] ?? false,
     );
   }
 

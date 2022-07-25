@@ -26,7 +26,7 @@ class _BrandPageState extends State<BrandPage> {
     return Scaffold(
       body: Container(
         color: Colors.grey,
-        child: const Text("bah"),
+        child: Text(brandController.brand.brand),
       ),
     );
   }
